@@ -1,0 +1,25 @@
+{
+  "name": "fallible",
+  "version": "0.1.0",
+  "description": "Type-safe error handling",
+  "keywords": [
+    "error-handling",
+    "type-safe",
+    "Result"
+  ],
+  "author": "Pedro Nascimento <pedro.nascimento@bitcapital.com.br>",
+  "homepage": "",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  }
+}

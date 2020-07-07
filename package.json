@@ -1,0 +1,20 @@
+{
+  "name": "fallible-monorepo",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": "Pedro Nascimento <pedrolcn@gmail.com>",
+  "workspaces": [
+    "packages/*",
+    "examples/*"
+  ],
+  "scripts": {
+    "bootstrap": "lerna bootstrap && yarn build",
+    "build": "lerna run build"
+  },
+  "private": true,
+  "devDependencies": {
+    "@types/node": "^14.0.18",
+    "lerna": "^3.19.0",
+    "typescript": "^3.9.6"
+  }
+}
