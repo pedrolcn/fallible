@@ -10,7 +10,11 @@ export function Fallible(target: Object, propertyKey: string | symbol, descripto
     try {
       return originalMethod.apply(this, args);
     } catch (error) {
-      return Result.err(error);
+      if (error.__isPropagatedError) {
+        return Result.err(error.internalErr);
+      } else {
+        throw error
+      }
     }
   };
 
@@ -24,7 +28,11 @@ export function FallibleAsync(target: Object, propertyKey: string | symbol, desc
     try {
       return await originalMethod.apply(this, args);
     } catch (error) {
-      return Result.err(error);
+      if (error.__isPropagatedError) {
+        return Result.err(error.internalErr);
+      } else {
+        throw error
+      }
     }
   };
 

@@ -39,11 +39,18 @@ export class Result<T, E> {
     return new Result<any, E>(ResultVariant.Err, value);
   }
 
-  public propagate(): T {
+  /**
+   * Extracts the value from a result if it is Ok, otherwise makes function return early with Err value.
+   * This method is meant to be called only from within a Fallible or FallibleAsync function.
+   */
+  public extract(): T {
     if (this._isOk)  {
       return this.value!;
     }
 
-    throw this.error
+    throw {
+      __isPropagatedError: true,
+      internalErr: this.error
+    };
   }
 }
