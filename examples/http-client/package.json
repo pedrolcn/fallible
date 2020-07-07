@@ -1,0 +1,25 @@
+{
+  "name": "http-client",
+  "version": "0.1.0",
+  "description": "> TODO: description",
+  "author": "Pedro Nascimento <pedro.nascimento@bitcapital.com.br>",
+  "homepage": "",
+  "main": "lib/http-client.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "fallible": "^0.1.0"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0"
+  }
+}
